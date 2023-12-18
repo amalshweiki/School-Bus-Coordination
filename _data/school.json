@@ -1,0 +1,14 @@
+[
+	{
+		"name":"School1",
+		"location":"Location1",
+		"contact":"111-111-111",
+		"busServices":["6572409c4cd9051d5959f054","657241484cd9051d5959f056"]
+	},
+	{
+	    "name":"School2",
+		"location":"Location2",
+		"contact":"222-222-333",
+		"busServices":["6572409c4cd9051d5959f054","657241484cd9051d5959f056"]
+	}
+]

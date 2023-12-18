@@ -1,0 +1,91 @@
+.grid-container-bus-page {
+  margin-top: 12%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:
+    0.1fr 0.1fr
+    0.1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "TitleAndPar TitleAndPar list-of-Buses list-of-Buses"
+    "image image bus bus"
+    "image image . .";
+}
+.list-of-Buses {
+  grid-area: list-of-Buses;
+  z-index: 1000;
+}
+.TitleAndPar {
+  margin-top: -60px;
+  margin-left: 10%;
+  grid-area: TitleAndPar;
+  z-index: 1000;
+}
+
+.bus {
+  grid-area: bus;
+  z-index: 1000;
+
+  width: 80%;
+}
+.image {
+  grid-area: image;
+}
+.TitleAndPar h1,
+.list-of-Buses h1 {
+  color: var(--primary-100);
+}
+.TitleAndPar p {
+  color: var(--grey-500);
+  width: 70%;
+  font-size: 110%;
+}
+hr {
+  border: 2px solid var(--grey-400);
+  margin-right: 300px;
+}
+.bus-details {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bus-details label,
+.bus-details ul,
+.bus-details li {
+  display: block;
+  margin: 5px 0;
+}
+.form-container {
+  margin-bottom: 5%;
+  border: 2px solid rgb(112, 161, 176);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.label-style {
+  font-size: 18px;
+  color: var(--grey-400);
+}
+.label-style span {
+  color: var(--grey-700);
+  font-weight: bold;
+}
+.ul-style li {
+  list-style-type: decimal;
+  color: var(--grey-900);
+  font-size: 18px;
+  padding: 0;
+}
+.link-see-detail {
+  margin-left: 10px;
+  color: var(--primary-400);
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 5%;
+}
+.render-com {
+  z-index: 123554;
+}

@@ -1,0 +1,176 @@
+.school-container {
+  margin-top: 13%;
+  margin-left: 5%;
+}
+.school-container h1 {
+  color: var(--primary-100);
+  font-size: 3rem;
+}
+.school-container p {
+  color: var(--grey-500);
+  width: 60%;
+  font-size: 1.5rem;
+  margin-top: 5%;
+  line-height: 1.8;
+}
+.pAndimg {
+  display: flex;
+}
+.pAndimg img {
+  margin-top: -100px;
+  height: 400px;
+}
+/* .backgroundtitle {
+  background-image: url(../images/schoolpage.jpg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+  background-position-y: -2000px;
+  background-position: right center;
+} */
+
+.school-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* margin-left: 8%;
+  margin-right: 8%; */
+  gap: 30px;
+}
+
+/* body {
+  margin: 0;
+  padding: 0;
+}
+
+.school-page {
+  /* position: relative; 
+  height: 100vh;
+  overflow: auto;
+}
+
+/* .background-footer {
+  margin-top: 1000px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-image: url("../images/Top-10-Ways-To-Make-School-Trips-Secure-And-Coordinated-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+/*.grid-container-school-page {
+   margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); 
+  gap: 20px; 
+  width: 100%;
+  grid-template-areas:
+    "TitleAndPar TitleAndPar list-of-Schools list-of-Schools"
+    "school school school school"; 
+}*/
+/* .grid-container-school-page {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:
+    0.1fr 0.1fr
+    0.1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "TitleAndPar TitleAndPar list-of-Schools list-of-Schools"
+    "school school school school"
+    "school school school school";
+} 
+.list-of-Schools {
+  grid-area: list-of-Schools;
+  z-index: 1000;
+}
+.TitleAndPar {
+  margin-top: -60px;
+  margin-left: 10%;
+  grid-area: TitleAndPar;
+  z-index: 1000;
+}
+.school {
+  grid-area: school;
+  z-index: 1000;
+}
+.schools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.school-info {
+  width: 100%;
+}
+ .school {
+  grid-area: school;
+  z-index: 1000;
+
+  width: 80%;
+} 
+.TitleAndPar h1,
+.list-of-Schools h1 {
+  color: var(--primary-100);
+}
+.TitleAndPar p {
+  color: var(--grey-500);
+  width: 70%;
+  font-size: 110%;
+}
+hr {
+  border: 2px solid var(--grey-400);
+  margin-right: 300px;
+}*/
+.school-details {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.school-details label,
+.school-details ul,
+.school-details li {
+  display: block;
+  margin: 5px 5px;
+}
+.form-container {
+  width: 420px;
+  margin-top: 20px;
+  margin-bottom: 5%;
+  border: 2px solid rgb(112, 161, 176);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.label-style {
+  font-size: 20px;
+  color: var(--grey-400);
+}
+.label-style span {
+  color: var(--grey-700);
+  font-weight: bold;
+}
+.ul-style li {
+  list-style-type: decimal;
+  color: var(--grey-900);
+  font-size: 18px;
+  padding: 0;
+}
+.link-see-detail {
+  margin-left: 10px;
+  color: var(--primary-400);
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+  margin-bottom: 5%;
+}

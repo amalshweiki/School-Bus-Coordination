@@ -1,0 +1,18 @@
+[
+    {
+         "pickupTimes":["08:00 AM","08:30 AM"],
+         "dropoffTimes":["02:00 AM","02:30 AM"],
+         "loadingUnloadingStation":["station1","station2"],
+         "contact":"012-012-012",
+         "schools":["6579fc90cd16b95bff7d0373","6579fd1dcd16b95bff7d0376"],
+         "drivername":"Driver1"
+    },
+    {
+        "pickupTimes":["07:00 AM","07:30 AM"],
+        "dropoffTimes":["01:00 AM","01:30 AM"],
+        "loadingUnloadingStation":["station3","station4"],
+        "contact":"023-023-012",
+        "schools":["6579fc90cd16b95bff7d0373","6579fd1dcd16b95bff7d0376"],
+        "drivername":"Driver2"
+    }
+]

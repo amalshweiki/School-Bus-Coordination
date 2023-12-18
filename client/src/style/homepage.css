@@ -1,0 +1,99 @@
+.all-page {
+  /* position: relative; */
+  /* width: 100vw;
+  height: 100vh; */
+  margin: 0;
+  z-index: 3000;
+  background-image: url("../images/home-page-background-without-bus.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.grid-container-home {
+  margin-top: 12%;
+  display: grid;
+  grid-template-columns: 0.5fr 0.3fr 0.3fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . title-and-get text"
+    "bus bus bus bus"
+    ". . . .";
+}
+
+.text {
+  grid-area: text;
+  width: 80%;
+}
+.text p span {
+  color: var(--grey-600);
+  font-size: 25px;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: bold;
+}
+.text p {
+  color: var(--grey-400);
+  font-size: 18px;
+}
+.title-and-get {
+  grid-area: title-and-get;
+}
+.title-and-get h1,
+.title-and-get h2,
+.title-and-get h3 {
+  color: var(--primary-100);
+}
+.title-and-get .GET-STARTED {
+  padding: 10px;
+  border: 2px solid var(--grey-700);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--grey-400);
+}
+
+.GET-STARTED:hover {
+  background-color: var(--primary-100);
+}
+
+.bus {
+  grid-area: bus;
+}
+.bus img {
+  width: 1000px;
+  height: 500px;
+  z-index: 2000;
+  margin-left: 2%;
+  margin-top: -17%;
+  animation: moveRight 10s linear infinite;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(10%);
+  }
+  30% {
+    transform: translateX(10%);
+  }
+  40% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(30%);
+  }
+
+  80% {
+    transform: translateX(70%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
