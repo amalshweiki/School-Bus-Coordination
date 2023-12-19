@@ -34,6 +34,9 @@ const BusesPage = () => {
       console.error("Error adding bus:", error);
     }
   };
+  const generateUniqueKey = () => {
+    return Math.random().toString(36).substr(2, 9); // A simple example, replace it with a more robust solution if needed
+  };
   return (
     <div>
       <div className="school-container">
@@ -78,10 +81,14 @@ const BusesPage = () => {
       )} */}
 
         <div className="school-list">
-          {buses.map((bus, idx) => {
+          {buses.map((bus) => {
             return (
               <>
-                <BusInfo key={bus.id || idx} {...bus} onEdit={handleEditBus} />
+                <BusInfo
+                  key={bus._id || generateUniqueKey()}
+                  {...bus}
+                  onEdit={handleEditBus}
+                />
               </>
             );
           })}

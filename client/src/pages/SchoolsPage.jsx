@@ -82,11 +82,11 @@ const SchoolsPage = () => {
         )} */}
 
         <div className="school-list">
-          {schools.map((school, idx) => {
+          {schools.map((school) => {
             return (
               <>
                 <SchoolInfo
-                  key={school.id || generateUniqueKey()}
+                  key={school._id}
                   {...school}
                   onEdit={handleEditSchool}
                 />
