@@ -34,7 +34,9 @@ const SchoolsPage = () => {
       console.error("Error adding school:", error);
     }
   };
-
+  const generateUniqueKey = () => {
+    return Math.random().toString(36).substr(2, 9); // A simple example, replace it with a more robust solution if needed
+  };
   return (
     <div>
       <div className="school-container">
@@ -84,7 +86,7 @@ const SchoolsPage = () => {
             return (
               <>
                 <SchoolInfo
-                  key={school.id || idx}
+                  key={school.id || generateUniqueKey()}
                   {...school}
                   onEdit={handleEditSchool}
                 />

@@ -10,10 +10,10 @@ const useBusForm = (busId) => {
   const [bus, setBus] = useState({
     drivername: "",
     contact: "",
-    pickupTimes: "",
-    dropoffTimes: "",
-    loadingUnloadingStation: "",
-    schools: "",
+    pickupTimes: [],
+    dropoffTimes: [],
+    loadingUnloadingStation: [],
+    schools: [],
   });
   const [errors, setErrors] = useState({
     name: null,
@@ -101,10 +101,10 @@ const useBusForm = (busId) => {
     if (isValid) {
       if (busId) {
         editBus(bus);
-        navigate(`/bus/${busId}`);
+        navigate(`/buses`);
       } else {
         const newBusId = await addNewBus(bus);
-        navigate(`/bus/${newBusId}`);
+        navigate(`/buses`);
       }
     }
   };

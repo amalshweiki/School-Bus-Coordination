@@ -60,11 +60,8 @@ export const schoolAPI = {
   // Get a specific school
   getSchool: (schoolId) => API.get(`/schools/${schoolId}`),
   // Update a school
-  updateScool: (school, schoolId) => {
-    console.log(`Updating school with ID ${schoolId}:`, school);
-    return API.put(`/schools/${schoolId}`, school);
-  },
-  // updateSchool: (school, schoolId) => API.put(`/schools/${schoolId}`, school),
+
+  updateSchool: (school, schoolId) => API.put(`/schools/${schoolId}`, school),
   // Add a school
   addSchool: (school) => API.post("/schools", school),
   // Delete a school
@@ -82,5 +79,5 @@ export const busAPI = {
   // Add a bus
   addBus: (bus) => API.post("/buses", bus),
   // Delete a bus
-  deleteBus: (busId) => API.delete(`/buses`),
+  deleteBus: (busId) => API.delete(`/buses/${busId}`),
 };

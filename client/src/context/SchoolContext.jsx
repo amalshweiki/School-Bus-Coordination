@@ -55,7 +55,7 @@ export const SchoolProvider = ({ children }) => {
   const editSchool = async (school) => {
     setIsLoading(true);
     try {
-      await schoolAPI.updateSchool(school, school.id);
+      await schoolAPI.updateSchool(school, school._id);
       handleSuccess("School updated successfully");
     } catch (err) {
       showToast("An error occurred while updating the School", "error");

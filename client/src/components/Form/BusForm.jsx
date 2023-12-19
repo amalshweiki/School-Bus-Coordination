@@ -1,19 +1,19 @@
-import useBusForm from "../../hooks/useSchoolForm";
+import useBusForm from "../../hooks/useBusForm";
 
 import Input from "./Input";
 
-const BusForm = ({ schoolId, btnText, onClose, onSubmit }) => {
+const BusForm = ({ buslId, btnText, onClose, onSubmit }) => {
   const { bus, loading, errors, handleChange, handleSubmit } =
-    useBusForm(schoolId);
+    useBusForm(buslId);
 
   const fields = [
     {
       id: 1,
-      name: "drivername",
+      name: "Driver Name",
       inputName: "drivername",
       value: bus.drivername,
       type: "text",
-      placeholder: "driver name",
+
       error: errors.drivername,
     },
     {
@@ -22,12 +22,12 @@ const BusForm = ({ schoolId, btnText, onClose, onSubmit }) => {
       inputName: "contact",
       value: bus.contact,
       type: "text",
-      placeholder: "Driver contact",
+
       error: errors.contact,
     },
     {
       id: 3,
-      name: "pickupTimes",
+      name: "Pickup Times",
       inputName: "pickupTimes",
       value: bus.pickupTimes,
       type: Array,
@@ -35,7 +35,7 @@ const BusForm = ({ schoolId, btnText, onClose, onSubmit }) => {
     },
     {
       id: 4,
-      name: "dropoffTimes",
+      name: "Drop off Times",
       inputName: "dropoffTimes",
       value: bus.dropoffTimes,
       type: Array,
@@ -43,7 +43,7 @@ const BusForm = ({ schoolId, btnText, onClose, onSubmit }) => {
     },
     {
       id: 5,
-      name: "loadingUnloadingStation",
+      name: "loading/Unloading Station",
       inputName: "loadingUnloadingStation",
       value: bus.loadingUnloadingStation,
       type: Array,

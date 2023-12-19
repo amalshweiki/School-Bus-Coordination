@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
-import BusForm from "../components/Form/SchoolForm";
+import BusForm from "../components/Form/BusForm";
 import { useGlobalAuthContext } from "../hooks/useGlobalAuthContext";
 import { useGlobalBusContext } from "../hooks/useGlobalBusContext";
 import { useGlobalSchoolContext } from "../hooks/useGlobalSchoolContext";
@@ -16,20 +16,19 @@ const BusInfo = ({
   pickupTimes,
   dropoffTimes,
   loadingUnloadingStation,
-  schools,
+  schoolsava,
 }) => {
   const { loading } = useGlobalAuthContext();
   const navigate = useNavigate();
   const { busId } = useParams();
   const { user } = useGlobalAuthContext();
-  const { fetchBus, currentBus, isLoading, removeBus } =
-    useGlobalSchoolContext();
-  const { buses, isLoading: busLoading } = useGlobalBusContext();
+  const { fetchBus, currentBus, isLoading, removeBus } = useGlobalBusContext();
+  const { schools, isLoading: busLoading } = useGlobalSchoolContext();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  // const [showBusDetails, setShowBusDetails] = useState(
-  //   Array(busServices.length).fill(false)
-  // );
+  const [showSchoolDetails, setShowSchoolDetails] = useState(
+    Array(schools.length).fill(false)
+  );
   const [isEditing, setIsEditing] = useState(false);
   const handleEditClick = () => {
     setIsEditing(true);
@@ -76,65 +75,29 @@ const BusInfo = ({
           <span>Contact:</span> {contact}
         </label>
         <label className="label-style">
-          <span>Pickup Times:</span> {pickupTimes}
+          <span>Pickup Times:</span>
+          <ul>
+            {pickupTimes.map((picktime, index) => (
+              <li key={index}>{picktime}</li>
+            ))}
+          </ul>
         </label>
         <label className="label-style">
-          <span>Drop off Times:</span> {dropoffTimes}
+          <span>Drop off Times:</span>
+          <ul>
+            {dropoffTimes.map((drop, index) => (
+              <li key={index}>{drop}</li>
+            ))}
+          </ul>
         </label>
-        <div>
-          <label className="label-style">
-            <span>Bus Services:</span>
-          </label>
-          {/* <ul className="ul-style">
-            {busServices.map((busId, index) => {
-              const bus = buses.find((bus) => bus._id === busId);
-              return (
-                <li key={index}>
-                  {bus ? (
-                    <>
-                      <label className="label-style">
-                        <span>Driver Name: </span> {bus.drivername}
-                      </label>
-
-                      <button
-                        onClick={() => handleToggleDetails(index)}
-                        className={`see-details ${
-                          showBusDetails[index] ? "show-less" : ""
-                        }`}
-                      >
-                        {showBusDetails[index] ? "Hide Details" : "See Details"}
-                      </button>
-                      {showBusDetails[index] && (
-                        <div>
-                          <label className="label-style">
-                            <span>Contact:</span> {bus.contact}
-                          </label>
-
-                          <label className="label-style">
-                            <span>Loading/Unloading Stations:</span>
-                            {bus.loadingUnloadingStation?.length > 0 ? (
-                              <ul className="ul-style">
-                                {bus.loadingUnloadingStation.map(
-                                  (station, stationIndex) => (
-                                    <li key={stationIndex}>{station}</li>
-                                  )
-                                )}
-                              </ul>
-                            ) : (
-                              <p>No loading/unloading stations available.</p>
-                            )}
-                          </label>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <p>Bus details not found</p>
-                  )}
-                </li>
-              );
-            })}
-          </ul> */}
-        </div>
+        <label className="label-style">
+          <span>Loading/Uploading Stations:</span>
+          <ul>
+            {loadingUnloadingStation.map((loading, index) => (
+              <li key={index}>{loading}</li>
+            ))}
+          </ul>
+        </label>
 
         <div className="button-container">
           {user && user.role === "admin" && (
@@ -145,11 +108,11 @@ const BusInfo = ({
                 role="button"
                 onClick={handleEditClick}
               >
-                Edit School
+                Edit Bus
               </button>
               <Modal isOpen={isEditing} onClose={() => setIsEditing(false)}>
                 <div className="school-form">
-                  <h2>Edit School</h2>
+                  <h2>Edit Bus</h2>
                   <BusForm
                     btnText="Save Changes"
                     busId={_id}
@@ -162,7 +125,7 @@ const BusInfo = ({
                 role="button"
                 onClick={handleDeleteClick}
               >
-                Delete School
+                Delete Bus
               </button>
               <Modal isOpen={showDeleteModal} onClose={handleCancelDelete}>
                 <div className="delete-confirmation">

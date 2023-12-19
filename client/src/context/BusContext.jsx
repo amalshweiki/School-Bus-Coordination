@@ -55,7 +55,7 @@ export const BusProvider = ({ children }) => {
   const editBus = async (bus) => {
     setIsLoading(true);
     try {
-      await busAPI.updateBus(bus, bus.id);
+      await busAPI.updateBus(bus, bus._id);
       handleSuccess("Bus updated successfully");
     } catch (err) {
       showToast("An error occurred while updating the Bus", "error");
@@ -64,10 +64,10 @@ export const BusProvider = ({ children }) => {
     }
   };
 
-  const removeBus = async (id) => {
+  const removeBus = async (_id) => {
     setIsLoading(true);
     try {
-      await busAPI.deleteBus(id);
+      await busAPI.deleteBus(_id);
       handleSuccess("Bus deleted successfully");
     } catch (err) {
       showToast("An error occurred while deleting the Bus", "error");

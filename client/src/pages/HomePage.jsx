@@ -9,7 +9,7 @@ const HomePage = () => {
           <h3>Right Bus.</h3>
           <h2>Right Stop.</h2>
           <h1>Right Time.</h1>
-          <Link id="get-started" to="" className="GET-STARTED">
+          <Link id="get-started" className="GET-STARTED" to="/auth">
             GET STARTED
           </Link>
         </div>

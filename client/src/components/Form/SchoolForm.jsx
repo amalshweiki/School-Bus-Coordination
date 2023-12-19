@@ -13,7 +13,7 @@ const SchoolForm = ({ schoolId, btnText, onClose, onSubmit }) => {
       inputName: "name",
       value: school.name,
       type: "text",
-      placeholder: "School name",
+
       error: errors.name,
     },
     {
@@ -22,7 +22,7 @@ const SchoolForm = ({ schoolId, btnText, onClose, onSubmit }) => {
       inputName: "location",
       value: school.location,
       type: "text",
-      placeholder: "School Location",
+
       error: errors.location,
     },
     {
