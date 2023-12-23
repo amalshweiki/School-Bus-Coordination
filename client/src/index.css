@@ -118,3 +118,6 @@ html {
 .login-btn {
   background: var(--primary-50);
 }
+html {
+  overflow-x: hidden;
+}

@@ -26,13 +26,11 @@ connectDB();
 
 const app = express();
 
-// Body parser middleware
 app.use(express.json());
 
-// Cookie parser middleware
 app.use(cookieParser());
 
-// // Dev logging middleware
+// // // Dev logging middleware
 // if (process.env.NODE_ENV !== "production") {
 //   app.use(morgan("dev"));
 // }
@@ -54,13 +52,6 @@ app.use(hpp());
   CORS is a web security mechanism that allows web applications to access resources hosted on other domains while protecting against unauthorized access and web-based attacks.
 */
 app.use(cors());
-
-// Rate limiting
-// const limiter = rateLimit({
-//   windowMs: 10 * 60 * 1000, // 10 minutes
-//   max: 100,
-// });
-// app.use(limiter);
 
 // Set security HTTP headers
 app.use(helmet());
